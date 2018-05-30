@@ -57,7 +57,7 @@ fun calcSolution(spaceNodes: Array<Double>, timeNodes: Array<Double>, spaceStep:
         }
         result[j][spaceSplitNum] = (2.0 * (result[j][spaceSplitNum - 1] / spaceStep + calcMu1(timeNodes[j])) / spaceStep -
                 (result[j - 2][spaceSplitNum] - 2.0 * result[j - 1][spaceSplitNum]) / (timeStep * timeStep) + calcF(spaceNodes[spaceSplitNum], timeNodes[j])) /
-                (1.0 / (timeStep * timeStep) + 2.0 * (1.0 + 1.0 / spaceStep) / spaceStep)
+                (1.0 / (timeStep * timeStep) + 2.0 * (beta + 1.0 / spaceStep) / spaceStep)
     }
 
     return result
